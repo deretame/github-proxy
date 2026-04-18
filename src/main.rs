@@ -23,7 +23,7 @@ use tokio::sync::RwLock;
 static GLOBAL: MiMalloc = MiMalloc;
 
 static SAFE_PATTERN: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"(?i)^/repos/[\w.-]+/Breeze-plugin-[\w.-]+/releases/latest$")
+    Regex::new(r"(?i)^/repos/[\w.-]+/(Breeze|Breeze-plugin-[\w.-]+)/releases/latest$")
         .expect("safe path regex should be valid")
 });
 
